@@ -1,7 +1,16 @@
 <template>
   <div>
-    <carousel>
-      <slide></slide>
+    <carousel :per-page="1" :mouse-drag="true" :paginationEnabled="false">
+      <slide v-for="(slide, index) in slides" :key="index">
+        <div class="slider_bck" :style="{'background':`url(${slide.bck})`}">
+          <div class="container slider-container">
+            <div class="text">{{slide.text}}</div>
+            <div class="image">
+              <img :src="slide.img" />
+            </div>
+          </div>
+        </div>
+      </slide>
     </carousel>
   </div>
 </template>
@@ -24,11 +33,15 @@ export default {
         },
         {
           text: "20% OFF ON ALL PIZZAS",
-          bck: slideBck,
-          img: pizzaOne
+          bck: slideBck2,
+          img: pizzaTwo
         }
       ]
     };
+  },
+  components: {
+    Carousel,
+    Slide
   }
 };
 </script>

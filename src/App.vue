@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <Header />
-    <div>content</div>
-    <comp-featured />
+    <div>
+      <comp-featured />
+      <comp-menu />
+      <comp-call-us />
+      <comp-newsletter />
+    </div>
     <Footer />
   </div>
 </template>
@@ -11,12 +15,18 @@
 import Header from "./components/Header-footer/Header";
 import Footer from "./components/Header-footer/Footer";
 import compFeatured from "./components/Featured/Index";
+import compMenu from "./components/Menu/Index";
+import compCallUs from "./components/CallUs/Index";
+import compNewsletter from "./components/Newsletter/Index";
 
 export default {
   components: {
     Header,
     Footer,
-    compFeatured
+    compFeatured,
+    compMenu,
+    compCallUs,
+    compNewsletter
   }
 };
 </script>
